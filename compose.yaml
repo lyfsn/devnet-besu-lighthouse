@@ -22,7 +22,7 @@ services:
       --rpc-ws-port=8546
       --rpc-ws-api=ADMIN,CLIQUE,ETH,NET,DEBUG,TXPOOL,ENGINE,TRACE,WEB3
       --p2p-enabled=true
-      --p2p-host=127.0.0.1
+      --p2p-host=${IP_ADDRESS}
       --p2p-port=30303
       --engine-rpc-enabled=true
       --engine-jwt-secret=/el-cl-genesis-data/jwt/jwtsecret
@@ -76,7 +76,7 @@ services:
       - --metrics-allow-origin=*
       - --metrics-port=5054
       - --trusted-peers=16Uiu2HAm4GXc2aYZkdfHvvn56s6zEdoSAwdiNcGkzvXX5y4MX4U4
-      - --boot-nodes=enr:-MS4QKjvQWjHjNSlrgJBnwI7j88ULp36kH6FegWreBuiHL0_UGs4EvAxALKLgvKjTFpk6x0zTPyxoXXt0PDeZxlAihgBh2F0dG5ldHOIAAAAAAAAAACEZXRoMpAjvkwgQAAAOP__________gmlkgnY0gmlwhFhjXm2EcXVpY4Iq-YlzZWNwMjU2azGhAoNhfDA57peBhfKlgRRDYKmjwOUPSPqj97hpWmwycgJdiHN5bmNuZXRzAIN0Y3CCKviDdWRwgir4
+      - --boot-nodes=enr:-MS4QHenAI-YHPsYNmGnWBPSbvxmOh-hdABYnlz9p_P42qRUBOvxnx6_p82e3SP_NIROAmWO8dbfnUGYuWBfDP90B5JFh2F0dG5ldHOI__________-EZXRoMpAjvkwgQAAAOP__________gmlkgnY0gmlwhFhjXm2EcXVpY4Iq-YlzZWNwMjU2azGhAoNhfDA57peBhfKlgRRDYKmjwOUPSPqj97hpWmwycgJdiHN5bmNuZXRzD4N0Y3CCKviDdWRwgir4
       - --checkpoint-sync-url=http://88.99.94.109:9781
       - --disable-optimistic-finalized-sync
       - --disable-backfill-rate-limiting
