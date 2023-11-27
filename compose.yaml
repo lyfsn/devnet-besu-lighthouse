@@ -4,7 +4,7 @@ services:
   execution:
     image: hyperledger/besu:latest
     environment:
-      - BESU_OPTS=-Xmx16g
+      - BESU_OPTS=-Xmx32g
     user: "root"
     command:
       --logging=INFO
