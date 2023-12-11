@@ -39,11 +39,11 @@ services:
       - ./execution-data:/execution-data
       - ./el-cl-genesis-data:/el-cl-genesis-data
     ports:
-      - "11845:8545" 
-      - "11846:8546" 
-      - "11851:8551" 
-      - "11801:9001" 
-      - "50603:50403"
+      - "11846:8545" 
+      - "11847:8546" 
+      - "11852:8551" 
+      - "11802:9001" 
+      - "50604:50403"
     restart: unless-stopped
 
   beacon:
