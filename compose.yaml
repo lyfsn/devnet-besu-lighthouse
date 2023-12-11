@@ -39,11 +39,11 @@ services:
       - ./execution-data:/execution-data
       - ./el-cl-genesis-data:/el-cl-genesis-data
     ports:
-      - "11846:8545" 
-      - "11847:8546" 
-      - "11852:8551" 
-      - "11802:9001" 
-      - "50604:50403"
+      - "11946:8545" 
+      - "11947:8546" 
+      - "11952:8551" 
+      - "10902:9001" 
+      - "50904:50403"
     restart: unless-stopped
 
   beacon:
@@ -76,7 +76,7 @@ services:
       - --metrics-allow-origin=*
       - --metrics-port=5054
       - --trusted-peers=16Uiu2HAm4GXc2aYZkdfHvvn56s6zEdoSAwdiNcGkzvXX5y4MX4U4
-      - --boot-nodes=enr:-MS4QHenAI-YHPsYNmGnWBPSbvxmOh-hdABYnlz9p_P42qRUBOvxnx6_p82e3SP_NIROAmWO8dbfnUGYuWBfDP90B5JFh2F0dG5ldHOI__________-EZXRoMpAjvkwgQAAAOP__________gmlkgnY0gmlwhFhjXm2EcXVpY4Iq-YlzZWNwMjU2azGhAoNhfDA57peBhfKlgRRDYKmjwOUPSPqj97hpWmwycgJdiHN5bmNuZXRzD4N0Y3CCKviDdWRwgir4
+      - --boot-nodes=enr:-MW4QIPB_mW73_QCAydxGM8w95SJwjYV8U0Qvrj1QS9v8ki7GOavZq1nD-kJ54dMC4JvpQ6QhTSOBY2YmcL1s9zCLlWBz4dhdHRuZXRziP__________hGV0aDKQI75MIEAAADj__________4JpZIJ2NIJpcIRYY15thHF1aWOCKvmJc2VjcDI1NmsxoQKDYXwwOe6XgYXypYEUQ2Cpo8DlD0j6o_e4aVpsMnICXYhzeW5jbmV0cw-DdGNwgir4g3VkcIIq-A
       - --checkpoint-sync-url=http://88.99.94.109:9781
       - --disable-optimistic-finalized-sync
       - --disable-backfill-rate-limiting
@@ -87,40 +87,11 @@ services:
       - ./consensus-data:/consensus-data 
       - ./el-cl-genesis-data:/el-cl-genesis-data
     ports:
-      - "11300:11100/udp"
-      - "11300:11100/tcp" 
-      - "4500:4000"
-      - "7354:5054"
+      - "11900:11100/udp"
+      - "11900:11100/tcp" 
+      - "4590:4000"
+      - "7394:5054"
     depends_on:
       - execution
     restart: unless-stopped
 
-  # validator:
-  #   image: sigp/lighthouse:v4.5.0
-  #   command:
-  #     - lighthouse
-  #     - validator_client
-  #     - --debug-level=info
-  #     - --testnet-dir=/el-cl-genesis-data/custom_config_data
-  #     - --validators-dir=/validator-keys/node-1-keystores/keys
-  #     - --secrets-dir=/validator-keys/node-1-keystores/secrets
-  #     - --init-slashing-protection
-  #     - --http
-  #     - --unencrypted-http-transport
-  #     - --http-address=0.0.0.0
-  #     - --http-port=5042
-  #     - --beacon-nodes=http://beacon:4000
-  #     - --suggested-fee-recipient=0x8943545177806ED17B9F23F0a21ee5948eCaa776
-  #     - --metrics
-  #     - --metrics-address=0.0.0.0
-  #     - --metrics-allow-origin=*
-  #     - --metrics-port=5064
-  #   volumes:
-  #     - ./el-cl-genesis-data:/el-cl-genesis-data
-  #     - ./validator-keys:/validator-keys
-  #   ports:
-  #     - "7142:5042"
-  #     - "7164:5064"
-  #   depends_on:
-  #     - beacon
-  #   restart: unless-stopped
